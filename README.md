@@ -1,10 +1,7 @@
 # Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs
 
 [![arXiv](https://img.shields.io/badge/arXiv-2026.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2026.XXXXX)
-[![EMNLP 2026](https://img.shields.io/badge/EMNLP-2026-blue.svg)](https://2026.emnlp.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-![Protocol overview showing two-stage coercion and challenge pipeline](assets/protocol_overview.png)
+[![Hugging Face]([https://img.shields.io/badge/EMNLP-2026-blue.svg](https://img.shields.io/badge/🤗%20HuggingFace-MAXFLIP-yellow.svg))]([https://2026.emnlp.org/](https://huggingface.co/datasets/nafisehNik/WhoFlips))
 
 ## Abstract
 
@@ -107,7 +104,7 @@ results = run_challenge(model="your-model-id", challenges=challenges, attributio
 ```bibtex
 @inproceedings{whoflip2026,
   title     = {Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in {LLM}s},
-  author    = {Anonymous},
+  author    = {Nafiseh Nikeghbal,},
   booktitle = {Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},
   year      = {2026},
   url       = {https://arxiv.org/abs/2026.XXXXX}
