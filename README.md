@@ -1,7 +1,7 @@
 # Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs
 
 [![arXiv](https://img.shields.io/badge/arXiv-2026.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2026.XXXXX)
-[![Hugging Face]([https://img.shields.io/badge/EMNLP-2026-blue.svg](https://img.shields.io/badge/🤗%20HuggingFace-MAXFLIP-yellow.svg))]([https://2026.emnlp.org/](https://huggingface.co/datasets/nafisehNik/WhoFlips))
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-MAXFLIP-FFD21E?logo=huggingface&logoColor=000)](https://huggingface.co/datasets/YOUR_ORG/whoflip-maxflip)
 
 ## Abstract
 
