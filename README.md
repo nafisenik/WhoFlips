@@ -1,7 +1,13 @@
-# Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs
+<h1 align="center">Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs</h1>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2026.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2026.XXXXX)
-[![HuggingFace](https://img.shields.io/badge/HuggingFace-MAXFLIP-FFD21E?logo=huggingface&logoColor=000)](https://huggingface.co/datasets/nafisehNik/WhoFlips)
+<p align="center">
+  <a href="https://arxiv.org/abs/2026.XXXXX">
+    <img src="https://img.shields.io/badge/arXiv-2026.XXXXX-b31b1b.svg"/>
+  </a>
+  <a href="https://huggingface.co/datasets/nafisehNik/WhoFlips">
+    <img src="https://img.shields.io/badge/HuggingFace-WhoFlips-FFD21E?logo=huggingface&logoColor=FF9D00"/>
+  </a>
+</p>
 
 ## Abstract
 
@@ -9,7 +15,9 @@
 
 ## How WhoFlip Works
 
-![Two-stage protocol diagram](assets/method.png)
+<p align="center">
+  <img src="pipe.png" alt="Two-stage protocol diagram" width="500"/>
+</p>
 
 **Stage I — Coercion.** A model is instructed to produce a *k*-sentence argument supporting a wrong answer choice. Items where the model refuses are excluded.
 
@@ -48,32 +56,29 @@ pip install -r requirements.txt
 
 Models are served via [vLLM](https://github.com/vllm-project/vllm) for open-weight checkpoints and via API for closed-source models. Set your API keys in `.env` before running.
 
-## Demo Notebooks
+## Dataset
 
-- `demo_blind.ipynb` — Run a BLIND challenge against any MMLU question using a pre-coerced argument from the release set.
-- `demo_self_attribution.ipynb` — Reproduce the self-attribution experiment and inspect SAD scores per model.
-- `demo_maxflip.ipynb` — Load the MAXFLIP curated set and evaluate any target model against the strongest available counterarguments.
+The dataset is released on Hugging Face under three subsets:
 
-## Repository Structure
+| Subset | Rows | Description |
+|--------|------|-------------|
+| `self_mmlu` | 115k | Same-model challenges across four argument lengths (k = 1, 3, 5, 10) and two attribution conditions (BLIND, SELF) |
+| `cross_mmlu` | 86.2k | Cross-model challenges, BLIND attribution at k = 10 |
+| `maxflip_mmlu` | 2.05k | MAXFLIP — one curated argument per question: the cross-model argument that flipped the most baseline models |
 
+```python
+from datasets import load_dataset
+
+# Same-model challenges
+self_data = load_dataset("nafisehNik/WhoFlips", "self_mmlu", split="test")
+
+# Cross-model challenges
+cross_data = load_dataset("nafisehNik/WhoFlips", "cross_mmlu", split="test")
+
+# MAXFLIP curated adversarial set
+maxflip_data = load_dataset("nafisehNik/WhoFlips", "maxflip_mmlu", split="test")
 ```
-whoflip/
-├── src/
-│   ├── coerce.py          # Stage I: argument coercion
-│   ├── challenge.py       # Stage II: challenge + flip detection
-│   ├── maxflip.py         # MAXFLIP curation logic
-│   └── utils.py           # Prompt templates, metrics, bootstrap CI
-├── data/
-│   ├── mmlu_sample.jsonl  # 2,052 sampled MMLU questions
-│   ├── challenge_records/ # Full per-model coerced arguments (k=1,3,5,10)
-│   └── maxflip.jsonl      # Curated MAXFLIP challenge set
-├── activations/           # Precomputed AFR tables (blind, self, cross)
-├── assets/                # Figures used in paper and README
-├── demo_blind.ipynb
-├── demo_self_attribution.ipynb
-├── demo_maxflip.ipynb
-└── requirements.txt
-```
+
 
 ## Models Evaluated
 
@@ -87,26 +92,18 @@ whoflip/
 | Qwen3.5-9B | `qwen3.5-9b` |
 | Qwen3.5-4B | `qwen3.5-4b` |
 
-## MAXFLIP Dataset
-
-MAXFLIP is a curated adversarial challenge set built by selecting, for each MMLU question, the wrong-answer argument that flipped the largest number of baseline models across the cross-model pool. It is intended as a **plug-in stress test** for any new model: simply run Stage II against MAXFLIP without needing to re-run coercion.
-
-```python
-from src.challenge import run_challenge
-from src.utils import load_maxflip
-
-challenges = load_maxflip("data/maxflip.jsonl")
-results = run_challenge(model="your-model-id", challenges=challenges, attribution="blind")
-```
-
 ## Citation
 
+If you use this dataset or protocol, please cite:
+
 ```bibtex
-@inproceedings{whoflip2026,
-  title     = {Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in {LLM}s},
-  author    = {Nafiseh Nikeghbal,},
-  booktitle = {Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},
-  year      = {2026},
-  url       = {https://arxiv.org/abs/2026.XXXXX}
+@inproceedings{
+  nikeghbal2026who,
+  title={Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in {LLM}s},
+  author={Nafiseh Nikeghbal and Amir Hossein Kargaran and Shaghayegh kolli and Jana Diesner},
+  booktitle={Second Workshop on Agents in the Wild: Safety, Security, and Beyond},
+  year={2026},
+  url={https://openreview.net/forum?id=5TbCmcKqCb}
 }
 ```
+
