@@ -1,0 +1,19 @@
+# Experiment drivers (run_self.py, run_cross.py)
+openai>=1.0.0
+datasets
+huggingface-hub
+tqdm
+requests
+pandas
+pyarrow
+
+# Analysis notebook (analysis.ipynb)
+numpy
+matplotlib
+seaborn
+scipy
+
+# Open-weight model serving (serve.py) requires vLLM on a CUDA machine.
+# Install it separately in the serving environment:
+#   pip install vllm
+# (kept out of the main list because it is GPU-only and version-sensitive)
