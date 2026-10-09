@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo/who-flips-logo-reversed.png">
+    <img src="assets/logo/who-flips-logo.png" width="520" alt="Who Flips? — a checked answer flipping to a crossed answer">
+  </picture>
+</p>
+
 <h1 align="center">Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs</h1>
 
 <p align="center">
