@@ -52,6 +52,13 @@ others, no hedging) is used for every run.
 - 📄 Paper: https://arxiv.org/html/2606.16011
 - 📦 Dataset: https://huggingface.co/datasets/nafisehNik/WhoFlips
 
+## Presentation materials
+
+- [Slides (PDF)](assets/media/who-flips-slides.pdf)
+- [A0 poster (PDF)](assets/media/who-flips-poster-a0.pdf) · [HTML](assets/media/who-flips-poster-a0.html)
+- [Narrated animation (MP4)](assets/media/who-flips.mp4) · [Silent GIF](assets/media/who-flips.gif)
+- [All final media](assets/media/) · [Editable sources and build tools](https://github.com/kargaranamir/paper-club/tree/main/2026-10-09-who-flips)
+
 ## Models (paper Table 1)
 
 | Model | id | Served how |
