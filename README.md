@@ -14,12 +14,6 @@
   <a href="https://huggingface.co/datasets/nafisehNik/WhoFlips">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-WhoFlips-FFD21E"/>
   </a>
-  <a href="https://huggingface.co/datasets/nafisehNik/coercion">
-    <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Raw-coercion-FFD21E"/>
-  </a>
-  <a href="https://huggingface.co/datasets/nafisehNik/coercion_cross">
-    <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Raw-coercion__cross-FFD21E"/>
-  </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg"/>
   </a>
@@ -38,19 +32,9 @@ Each item runs a two-stage, within-item protocol:
   answers normally; if it was correct, it is then shown the Stage I wrong-answer
   reasoning and asked to keep or change its answer.
 
-Factors varied: argument length *k* ∈ {1, 3, 5, 10}, attribution (blind vs. self),
-and source (same-model vs. cross-model). All decoding is deterministic
-(**temperature 0**) with **reasoning disabled** — open-weight models pin
-`enable_thinking=False`, GPT models pin `reasoning_effort="none"`. A single
-coercion prompt (the "high" prompt: defend the wrong option, dismantle the
-others, no hedging) is used for every run.
-
 <p align="center">
   <img src="assets/pipeline.jpg" width="90%" alt="WhoFlips pipeline: Stage I coercion and Stage II baseline + challenge"/>
 </p>
-
-- 📄 Paper: https://arxiv.org/html/2606.16011
-- 📦 Dataset: https://huggingface.co/datasets/nafisehNik/WhoFlips
 
 ## Presentation materials
 
@@ -152,6 +136,16 @@ Every script also has a PEP-723 header, so `uv run <script.py> ...` works
 without a manual install.
 
 ## Reproducing the dataset subsets
+
+### Experimental settings
+
+| Setting | Values |
+|---|---|
+| Argument length *k* | 1, 3, 5, 10 |
+| Attribution | blind, self |
+| Source | same-model, cross-model |
+| Decoding | temperature 0, reasoning disabled (`enable_thinking=False` for open-weight models, `reasoning_effort="none"` for GPT models) |
+| Coercion prompt | one prompt for every run (defend the wrong option, dismantle the others, no hedging) |
 
 ### `self_mmlu` — same-model challenges
 
