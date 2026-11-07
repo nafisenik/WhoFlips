@@ -20,7 +20,8 @@
 </p>
 
 Code for the paper **"Who Flips? Self- and Cross-Model Counterarguments Reveal
-Answer Instability in LLMs"** (arXiv:2606.16011).
+Answer Instability in LLMs"**, published in
+[Findings of EMNLP 2026](https://aclanthology.org/2026.findings-emnlp.1822/).
 
 The experiments measure **answer stability**: whether a model keeps a correct
 answer when it is later challenged with a well-argued case for a *wrong* option.
@@ -214,11 +215,19 @@ jupyter notebook analysis.ipynb
 ## Citation
 
 ```bibtex
-@article{nikeghbal2026whoflips,
-  title   = {Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs},
-  author  = {Nikeghbal, Nafiseh and Kargaran, Amir Hossein and Kolli, Shaghayegh and Diesner, Jana},
-  journal = {arXiv preprint arXiv:2606.16011},
-  year    = {2026}
+@inproceedings{nikeghbal-etal-2026-flips,
+    title     = "Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in {LLM}s",
+    author    = "Nikeghbal, Nafiseh and Kargaran, Amir Hossein and Kolli, Shaghayegh and Diesner, Jana",
+    editor    = "Lee, Hung-Yi and Dev, Sunipa and Li, Jessy and Elliott, Desmond",
+    booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {EMNLP} 2026",
+    month     = oct,
+    year      = "2026",
+    address   = "Budapest, Hungary",
+    publisher = "Association for Computational Linguistics",
+    url       = "https://aclanthology.org/2026.findings-emnlp.1822/",
+    doi       = "10.18653/2026.findings-emnlp.1822",
+    pages     = "38928--38942",
+    ISBN      = "979-8-89176-462-0"
 }
 ```
 
