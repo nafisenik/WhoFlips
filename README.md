@@ -32,10 +32,6 @@ Each item runs a two-stage, within-item protocol:
   answers normally; if it was correct, it is then shown the Stage I wrong-answer
   reasoning and asked to keep or change its answer.
 
-<p align="center">
-  <img src="assets/pipeline.jpg" width="90%" alt="WhoFlips pipeline: Stage I coercion and Stage II baseline + challenge"/>
-</p>
-
 ## Presentation materials
 
 - [Slides (PDF)](assets/media/who-flips-slides.pdf)
@@ -138,6 +134,10 @@ without a manual install.
 ## Reproducing the dataset subsets
 
 ### Experimental settings
+
+<p align="center">
+  <img src="assets/pipeline.jpg" width="55%" alt="WhoFlips pipeline: Stage I coercion and Stage II baseline + challenge"/>
+</p>
 
 | Setting | Values |
 |---|---|
